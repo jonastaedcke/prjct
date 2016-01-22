@@ -1,0 +1,10 @@
+#AddHandler x-httpd-php56 .php
+AddType application/x-httpd-php56 .php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*?)[^/]+/?$ $1index.php [L,NC]
+</IfModule>

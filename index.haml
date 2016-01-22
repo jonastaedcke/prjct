@@ -1,0 +1,154 @@
+:plain
+	<?php
+		//error_reporting(-1);
+		//ini_set('display_errors', 1);
+		//ini_set('display_startup_errors', 1);
+
+		include_once('assets/library/Parsedown.php');
+		include_once('assets/library/Prjct.php');
+
+		$projects = new Prjct('projects/');
+		$info = $projects->get_infoData();
+
+		// https://github.com/erusev/parsedown/wiki/Tutorial:-Get-Started
+		$Parsedown = new Parsedown();
+		$Parsedown->setBreaksEnabled(true);
+		$Parsedown->setMarkupEscaped(true);
+
+		$info_websitetitle = str_replace("\n", "", $Parsedown->text($info["websitetitle"]));
+		$info_title = str_replace("\n", "", $Parsedown->text($info["title"]));
+		$info_name = str_replace("\n", '', $Parsedown->text($info["name"]));
+		$info_description = str_replace("\n", '', $Parsedown->text($info["description"]));
+
+		//print_r($projects->get_projectData());
+	?>
+!!! 5
+%html><
+	%head><
+		%title>< <?php echo strip_tags($info_websitetitle) ?> - <?php echo $info["name"] ?>
+		%meta{name: "viewport", content: "width=device-width,minimum-scale=1.0,maximum-scale=1.0"}><
+		%meta{name: "apple-mobile-web-app-status-bar-style", content: "black-translucent"}><
+		%meta{name: "apple-mobile-web-app-capable", content: "yes"}><
+
+		%link{rel: "stylesheet", type: "text/css", href: "/assets/css/screen.css"}><
+		-#%link{rel: "shortcut icon", type: "image/x-icon", href: "/icon.ico"}><
+		%link{rel: "apple-touch-icon-precomposed", href: "/assets/image/apple-touch-icon-precomposed.jpg"}><
+
+		-# generll
+		%link{rel: "copyright", href: "/#imprint", title: 'Copyrights'}><
+		%meta{name: "author", content: "<?php echo $info_name ?>"}><
+		%meta{name: "keywords", content: "<?php echo $info_name ?>, prjct, project, work, bio, experience, job"}><
+		%meta{name: "description", content: "<?php echo $info_description ?>"}><
+
+		-# facebook
+		%meta{property: "og:title", content: "<?php echo $info_title ?>"}><
+		%meta{property: "og:site_name", content: "<?php echo $info_websitetitle ?>"}><
+		%meta{property: "og:description", content: "<?php echo $info_description ?>"}><
+		%meta{property: "og:image", content: "/assets/image/facebookprjct.jpg"}><
+
+
+		-# twitter
+		%meta{:content => "summary", :name => "twitter:card"}><
+		%meta{:content => "@prjctsdotwork", :name => "twitter:site"}><
+		%meta{:content => '<?php echo $info_title ?>', :name => "twitter:title"}><
+		%meta{:content => "<?php echo $info_description ?>", :name => "twitter:description"}><
+		%meta{:content => "/assets/image/twitterprjct.jpg", :name => "twitter:image"}><
+		-#%meta{:content => "#{url}", :name => "twitter:url"}><
+
+		-# google
+		%meta{:name => "google", :value => "notranslate"}><
+	%body><
+		%div#bar><
+			%div.space><
+			%div.box><
+				%a{:href => '/'}>< <?php echo $info_websitetitle ?>
+			%div.space><
+				%div#hire{class: '<?php echo $info["available"] === "Yes" ? "ready" : "" ?>'}><
+					%a{href: 'mailto:<?php echo $info["email"] ?>?subject=<?php echo htmlentities("I wanted to tell you something...") ?>&body=<?php echo htmlentities("... and write it here.") ?>'}>< <?php echo $info["available"] === "Yes" ? $info["availableyestext"] : $info["availablenotext"] ?>
+		%div.topspace><
+		:plain
+			<?php
+				if(!$projects->get_single()){
+			?>
+		%div#profile><
+			%div.box><
+				%div.profile><
+					%div.header><
+						%div.profileimage><
+						%div.cover><
+							%div.title>< <?php echo $info_title ?>
+					%div.name><
+						%div.value>< <?php echo $info_name ?>
+					%div.desc><
+						%div.value><
+							%p>< <?php echo $info_description ?>
+					%div.links>< <?php echo str_replace("\n", '', $Parsedown->text($info["links"])) ?>
+		:plain
+			<?php
+				}
+			?>
+
+		%div#projects><
+			%div.box><
+				:plain
+					<?php
+						foreach($projects->get_projectData() as $project){
+
+							foreach($project["parts"] as $part){
+					?>
+				%div{class: '<?php echo $projects->get_single() ? "project subproject" : "project" ?>'}><
+					%div.images><
+						:plain
+							<?php
+								foreach($part["img"] as $img){
+							?>
+						%img{src: '../<?php echo $img; ?>', alt: 'Project: <?php echo $project["name"] ?>'}><
+						:plain
+							<?php
+								}
+							?>
+					%div.info><
+						%div.more><
+							%div.url><
+								%a{href: '<?php echo "/".$project["url"] ?>/'}>< <?php echo "/".$project["url"] ?>/
+						%div.desc><
+							<?php echo str_replace("\n", '', $Parsedown->text($part["desc"])) ?>
+						:plain
+							<?php
+								if($projects->get_single() && count($part["attach"]) > 0){
+							?>
+						%ul.attachs><
+							:plain
+								<?php
+									foreach($part["attach"] as $attach){
+								?>
+							%li><
+								%a{href: '/<?php echo $attach ?>'} <?php echo basename($attach) ?>
+							:plain
+								<?php
+									}
+								?>
+						:plain
+							<?php
+								}
+							?>
+				:plain
+					<?php
+							}
+						}
+						if($projects->get_single() && count($projects->get_projectData()) === 0){
+					?>
+				%div.error>< There isn't a project. Please go <a href="/">back</a>.
+				:plain
+					<?php
+						}
+					?>
+		%div#footer><
+			%a{name: 'imprint', href: '#'}><
+			%div.box>< <?php echo str_replace("\n", '', $Parsedown->text($info["footer"])) ?>
+			%div.box><
+				%a#prct{href: 'http://prjct.work', target: '_blank'}><
+
+		%script{type: "text/javascript", src: "/assets/js/library/jquery-2.1.0.min.js"}><
+		%script{type: "text/javascript", src: "/assets/js/library/swiftclick.min.js"}><
+		%script{type: "text/javascript", src: "/assets/js/default-min.js"}><
