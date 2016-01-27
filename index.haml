@@ -76,13 +76,13 @@
 					%div.header><
 						%div.profileimage><
 						%div.cover><
-							%div.title>< <?php echo $info_title ?>
+							%div.title.markdown>< <?php echo $info_title ?>
 					%div.name><
-						%div.value>< <?php echo $info_name ?>
+						%div.value.markdown>< <?php echo $info_name ?>
 					%div.desc><
-						%div.value><
-							%p>< <?php echo $info_description ?>
-					%div.links>< <?php echo str_replace("\n", '', $Parsedown->text($info["links"])) ?>
+						%div.value.markdown><
+							<?php echo $info_description ?>
+					%div.links.markdown>< <?php echo str_replace("\n", '', $Parsedown->text($info["links"])) ?>
 		:plain
 			<?php
 				}
@@ -111,7 +111,7 @@
 						%div.more><
 							%div.url><
 								%a{href: '<?php echo "/".$project["url"] ?>/'}>< <?php echo "/".$project["url"] ?>/
-						%div.desc><
+						%div.desc.markdown><
 							<?php echo str_replace("\n", '', $Parsedown->text($part["desc"])) ?>
 						:plain
 							<?php

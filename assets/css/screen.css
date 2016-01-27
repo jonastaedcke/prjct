@@ -107,6 +107,43 @@ body {
     max-width: 500px;
     margin: 0 auto;
     padding: 0 1em; }
+  body .markdown h1 {
+    padding-bottom: 0.5em;
+    font-size: 1.5rem;
+    line-height: 1.2em; }
+    body .markdown h1:not(:first-child) {
+      padding-top: 1em; }
+  body .markdown h2 {
+    padding-bottom: 0.5em;
+    font-size: 1.1rem; }
+    body .markdown h2:not(:first-child) {
+      padding-top: 0.5em; }
+  body .markdown p,
+  body .markdown ul,
+  body .markdown ol {
+    font-size: 0.9rem;
+    line-height: 1.3rem; }
+    body .markdown p:not(:last-child),
+    body .markdown ul:not(:last-child),
+    body .markdown ol:not(:last-child) {
+      padding-bottom: 0.5em; }
+  body .markdown em {
+    font-style: italic; }
+  body .markdown ul,
+  body .markdown ol {
+    list-style: circle outside;
+    padding-left: 22.5px; }
+    body .markdown ul li,
+    body .markdown ol li {
+      padding-bottom: 0.5em; }
+  body .markdown p:not(:last-child) {
+    padding-bottom: 1em; }
+  body .markdown br {
+    display: block;
+    content: "A";
+    padding-bottom: 0.5em; }
+  body .markdown strong {
+    font-weight: 600; }
   body #bar {
     background-color: #FFFFFF;
     position: fixed;
@@ -259,21 +296,19 @@ body {
           -webkit-align-items: center;
           align-items: center; }
           body #profile .box .profile .header .cover .title {
-            padding: 1em;
-            color: #FFFFFF;
-            line-height: 1.5em; }
+            padding: 1em; }
+            body #profile .box .profile .header .cover .title p {
+              color: #FFFFFF;
+              font-size: 1rem; }
       body #profile .box .profile .name {
         background-color: #eceef2;
         padding: 1em 0;
         border-bottom: 0.1em solid #D9DDE4;
         text-align: center; }
-        body #profile .box .profile .name .value {
+        body #profile .box .profile .name .value p {
           font-size: 1.25rem; }
       body #profile .box .profile .desc {
         padding: 1em; }
-        body #profile .box .profile .desc .value {
-          line-height: 1.5em;
-          font-size: 0.9rem; }
       body #profile .box .profile .links p {
         padding: 0 1em;
         display: -webkit-flex;
@@ -384,43 +419,6 @@ body {
                 font-style: italic;
                 font-size: 0.8rem;
                 color: #D9DDE4; } }
-          body #projects .box .project .info .desc h1 {
-            padding-bottom: 0.5em;
-            font-size: 1.5rem;
-            line-height: 1.2em; }
-            body #projects .box .project .info .desc h1:not(:first-child) {
-              padding-top: 1em; }
-          body #projects .box .project .info .desc h2 {
-            padding-bottom: 0.5em;
-            font-size: 1.1rem; }
-            body #projects .box .project .info .desc h2:not(:first-child) {
-              padding-top: 0.5em; }
-          body #projects .box .project .info .desc p,
-          body #projects .box .project .info .desc ul,
-          body #projects .box .project .info .desc ol {
-            font-size: 0.9rem;
-            line-height: 1.3rem; }
-            body #projects .box .project .info .desc p:not(:last-child),
-            body #projects .box .project .info .desc ul:not(:last-child),
-            body #projects .box .project .info .desc ol:not(:last-child) {
-              padding-bottom: 0.5em; }
-          body #projects .box .project .info .desc em {
-            font-style: italic; }
-          body #projects .box .project .info .desc ul,
-          body #projects .box .project .info .desc ol {
-            list-style: circle outside;
-            padding-left: 22.5px; }
-            body #projects .box .project .info .desc ul li,
-            body #projects .box .project .info .desc ol li {
-              padding-bottom: 0.5em; }
-          body #projects .box .project .info .desc p:not(:last-child) {
-            padding-bottom: 1em; }
-          body #projects .box .project .info .desc br {
-            display: block;
-            content: "A";
-            padding-bottom: 0.5em; }
-          body #projects .box .project .info .desc strong {
-            font-weight: 600; }
           body #projects .box .project .info .more {
             width: 100%;
             padding-bottom: 0.5em; }
