@@ -39,6 +39,7 @@ With prjct you show easily your projects on the web ([Demo](http://work.jonaszie
 * 1.0.0 Initial commit :tada:
     * 1.0.1 small CSS bug fixes
     * 1.0.2 Markdown support for profile section, Update [README](https://github.com/jonaszielke/prjct/blob/master/README.md)
+    * 1.0.3 Better position for URLs in profile section
 
 ## License
 Copyright © 2016 [Jonas Zielke](http://www.jonaszielke.de) and released under [MIT](https://github.com/jonaszielke/prjct/blob/master/LICENSE.txt) license.
