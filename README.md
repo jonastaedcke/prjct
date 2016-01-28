@@ -3,7 +3,7 @@
 With prjct you show easily your projects on the web ([Demo](http://work.jonaszielke.de)). You don't need a database or any programming experience. Just upload this [zip file](https://github.com/jonaszielke/prjct/archive/master.zip) via FTP to your server and add your projects into `/projects/`. That's it!
 
 ## Requirements
-* Apache server (no SunOS, sorry) and PHP enabled
+* Apache server (no SunOS, sorry) and PHP >= 5.6
 * A FTP account for uploading files
 * Your brain and a nice image of you :)
 
