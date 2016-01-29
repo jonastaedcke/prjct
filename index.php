@@ -47,4 +47,4 @@
 	if($projects->get_single() && count($projects->get_projectData()) === 0){
 ?><div class="error">There isn't a project. Please go <a href="/">back</a>.</div><?php
 	}
-?></div></div><div id="footer"><a href="#" name="imprint"></a><div class="box"><?php echo str_replace("\n", '', $Parsedown->text($info["footer"])) ?></div><div class="box"><a href="http://prjct.work" id="prct" target="_blank"></a></div></div><script src="/assets/js/library/jquery-2.1.0.min.js" type="text/javascript"></script><script src="/assets/js/library/swiftclick.min.js" type="text/javascript"></script><script src="/assets/js/default-min.js" type="text/javascript"></script></body></html>
+?></div></div><div id="footer"><a href="#" name="imprint"></a><div class="box"><?php echo str_replace("\n", '', $Parsedown->text($info["footer"])) ?></div><div class="box"><a href="http://prjct.work" id="prct" target="_blank"></a></div></div><script src="/assets/js/library/jquery-2.1.0.min.js" type="text/javascript"></script><script src="/assets/js/default-min.js" type="text/javascript"></script></body></html>

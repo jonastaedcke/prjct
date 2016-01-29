@@ -76,13 +76,7 @@ select {
   clear: both; }
 
 * {
-  cursor: default;
-  -moz-user-select: -moz-none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none; }
+  cursor: default; }
 
 a {
   cursor: pointer; }
@@ -473,6 +467,9 @@ body {
           body #projects .box .project:not(.subproject) .info .more {
             -webkit-flex-shrink: 0;
             flex-shrink: 0; }
+        @media only screen and (max-width: 1060px) {
+          body #projects .box .project:not(.subproject):not(:hover):not(.active) .info .desc {
+            display: none; } }
         body #projects .box .project:not(.subproject):hover, body #projects .box .project:not(.subproject).active {
           border-top-color: transparent; }
           body #projects .box .project:not(.subproject):hover:not(:first-child), body #projects .box .project:not(.subproject).active:not(:first-child) {

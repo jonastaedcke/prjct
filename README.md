@@ -19,7 +19,7 @@ With prjct you show easily your projects on the web ([Demo](http://work.jonaszie
 * Open `/assets/projects/info.md` and edit the Markdown entries to your needs. Please don't use a dash after a new line.
 
 ## Tips
-* Don't miss the .htaccess!
+* Don't miss to upload the `.htaccess`!
 * Give every project, sub project and image a unique number. With this you have everything in the right order.
 * The project images have a maximum width of 500px - for retina displays 1,000px. Height doesn't matter ;)
 * When you use sub projects and you need a general description of your project. Just add a Markdown file and images to the root project folder. This will be displayed on the top of the project site (and not on the projects overview).
@@ -40,6 +40,7 @@ With prjct you show easily your projects on the web ([Demo](http://work.jonaszie
     * 1.0.1 small CSS bug fixes
     * 1.0.2 Markdown support for profile section, Update [README](https://github.com/jonaszielke/prjct/blob/master/README.md)
     * 1.0.3 Better position for URLs in profile section
+    * 1.0.4 Better UX for mobile users (copy Text and better scrolling), direct downloads
 
 ## License
 Copyright © 2016 [Jonas Zielke](http://www.jonaszielke.de) and released under [MIT](https://github.com/jonaszielke/prjct/blob/master/LICENSE.txt) license.
@@ -47,4 +48,3 @@ Copyright © 2016 [Jonas Zielke](http://www.jonaszielke.de) and released under [
 # Third party libraries
 * [Parsedown](https://github.com/erusev/parsedown)
 * [jQuery](https://github.com/jquery/jquery)
-* [swiftclick](https://github.com/munkychop/swiftclick)
