@@ -467,30 +467,29 @@ body {
           body #projects .box .project:not(.subproject) .info .more {
             -webkit-flex-shrink: 0;
             flex-shrink: 0; }
-        @media only screen and (max-width: 1060px) {
-          body #projects .box .project:not(.subproject):not(:hover):not(.active) .info .desc {
-            display: none; } }
-        body #projects .box .project:not(.subproject):hover, body #projects .box .project:not(.subproject).active {
+        body #projects .box .project:not(.subproject):not(.hover):not(.active) .info .desc {
+          overflow: hidden; }
+        body #projects .box .project:not(.subproject).hover, body #projects .box .project:not(.subproject).active {
           border-top-color: transparent; }
-          body #projects .box .project:not(.subproject):hover:not(:first-child), body #projects .box .project:not(.subproject).active:not(:first-child) {
+          body #projects .box .project:not(.subproject).hover:not(:first-child), body #projects .box .project:not(.subproject).active:not(:first-child) {
             margin-top: 2em; }
-          body #projects .box .project:not(.subproject):hover:not(:last-child), body #projects .box .project:not(.subproject).active:not(:last-child) {
+          body #projects .box .project:not(.subproject).hover:not(:last-child), body #projects .box .project:not(.subproject).active:not(:last-child) {
             margin-bottom: 2em; }
-          body #projects .box .project:not(.subproject):hover .images img, body #projects .box .project:not(.subproject).active .images img {
+          body #projects .box .project:not(.subproject).hover .images img, body #projects .box .project:not(.subproject).active .images img {
             -moz-box-shadow: rgba(52, 50, 62, 0.25) 0 0 1em 0;
             -webkit-box-shadow: rgba(52, 50, 62, 0.25) 0 0 1em 0;
             box-shadow: rgba(52, 50, 62, 0.25) 0 0 1em 0; }
-          body #projects .box .project:not(.subproject):hover + .project, body #projects .box .project:not(.subproject).active + .project {
+          body #projects .box .project:not(.subproject).hover + .project, body #projects .box .project:not(.subproject).active + .project {
             border-top-color: transparent; }
           @media only screen and (min-width: 1060px) {
-            body #projects .box .project:not(.subproject):hover .images, body #projects .box .project:not(.subproject).active .images {
+            body #projects .box .project:not(.subproject).hover .images, body #projects .box .project:not(.subproject).active .images {
               right: 50%; }
-            body #projects .box .project:not(.subproject):hover .info, body #projects .box .project:not(.subproject).active .info {
+            body #projects .box .project:not(.subproject).hover .info, body #projects .box .project:not(.subproject).active .info {
               right: -50%; } }
           @media only screen and (max-width: 1060px) {
-            body #projects .box .project:not(.subproject):hover .images, body #projects .box .project:not(.subproject).active .images {
+            body #projects .box .project:not(.subproject).hover .images, body #projects .box .project:not(.subproject).active .images {
               right: 100%; }
-            body #projects .box .project:not(.subproject):hover .info, body #projects .box .project:not(.subproject).active .info {
+            body #projects .box .project:not(.subproject).hover .info, body #projects .box .project:not(.subproject).active .info {
               right: 0; } }
       body #projects .box .error a {
         color: #00B085; }
