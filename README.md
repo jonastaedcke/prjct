@@ -37,6 +37,7 @@ With prjct you show easily your projects on the web ([Demo](http://work.jonaszie
 
 ## Release History
 * 1.1.0 Keyboard support. Use :arrow_up: and :arrow_down: on your keyboard for a nice scrolling animation!
+    * 1.1.1 Even better keyboard support (more coming soon)
 * 1.0.0 Initial commit :tada:
     * 1.0.1 small CSS bug fixes
     * 1.0.2 Markdown support for profile section, Update [README](https://github.com/jonaszielke/prjct/blob/master/README.md)
