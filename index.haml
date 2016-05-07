@@ -16,6 +16,7 @@
 		$Parsedown->setMarkupEscaped(true);
 
 		$info_websitetitle = str_replace("\n", "", $Parsedown->text($info["websitetitle"]));
+		$info_headerButton = str_replace("\n", "", $Parsedown->text($info["headerButton"]));
 		$info_title = str_replace("\n", "", $Parsedown->text($info["title"]));
 		$info_name = str_replace("\n", '', $Parsedown->text($info["name"]));
 		$info_description = str_replace("\n", '', $Parsedown->text($info["description"]));
@@ -63,8 +64,8 @@
 			%div.box><
 				%a{:href => '/'}>< <?php echo $info_websitetitle ?>
 			%div.space><
-				%div#hire{class: '<?php echo $info["available"] === "Yes" ? "ready" : "" ?>'}><
-					%a{href: 'mailto:<?php echo $info["email"] ?>?subject=<?php echo htmlentities("I wanted to tell you something...") ?>&body=<?php echo htmlentities("... and write it here.") ?>'}>< <?php echo $info["available"] === "Yes" ? $info["availableyestext"] : $info["availablenotext"] ?>
+				%div#contact><
+					%a{href: 'mailto:<?php echo $info["email"] ?>?subject=<?php echo htmlentities("I wanted to tell you something...") ?>&body=<?php echo htmlentities("... and write it here.") ?>'}>< <?php echo $info_headerButton ?>
 		%div.topspace><
 		:plain
 			<?php

@@ -1,9 +1,7 @@
 Let’s go! Replace my cool german sample text and upload this file to your project folder, too :)
 
 - Website Title:			Arbeitsproben
-- Available:					Yes
-- Available Yes Text: Available
-- Available No Text:	Not Available
+- HeaderButton:				Contact
 
 - Name: Jonas Zielke
 - E-Mail: jones@sayjones.de

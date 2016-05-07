@@ -78,7 +78,7 @@ select {
 * {
   cursor: default; }
 
-a {
+a, a * {
   cursor: pointer; }
 
 *:focus {
@@ -216,7 +216,8 @@ body {
         transition: all 0.3s ease-in-out 0s; }
         body #bar .box a *:active {
           color: #D9DDE4; }
-    body #bar #hire {
+    body #bar #contact {
+      background-color: #00B085;
       display: -webkit-flex;
       display: flex;
       -webkit-flex-direction: row;
@@ -225,20 +226,16 @@ body {
       justify-content: center;
       -webkit-align-items: center;
       align-items: center; }
-      body #bar #hire a {
+      body #bar #contact a {
         padding: 0 1em;
-        color: #34323E;
+        color: #FFFFFF;
+        font-weight: 600;
         font-size: 0.9rem;
         -moz-transition: all 0.3s ease-in-out 0s;
         -o-transition: all 0.3s ease-in-out 0s;
         -webkit-transition: all 0.3s ease-in-out;
         -webkit-transition-delay: 0s;
         transition: all 0.3s ease-in-out 0s; }
-      body #bar #hire.ready {
-        background-color: #00B085; }
-        body #bar #hire.ready a {
-          color: #FFFFFF;
-          font-weight: 600; }
     body #bar.small .box {
       padding-top: 0.5em;
       padding-bottom: 0.5em; }

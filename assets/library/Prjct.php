@@ -273,17 +273,9 @@ class Prjct{
 			$string = array_search('website title', array_map('strtolower', $matches[1]));
 			$output['websitetitle'] = $string === false ? 'Work Samples' : str_replace("\n", '', trim($matches[2][$string]));
 
-			// available
+			// contact header button
 			$string = array_search('available', array_map('strtolower', $matches[1]));
-			$output['available'] = $string === false ? 'No' : str_replace("\n", '', ucfirst(strtolower((trim($matches[2][$string])))));
-
-			// available Yes text
-			$string = array_search('available yes text', array_map('strtolower', $matches[1]));
-			$output['availableyestext'] = $string === false ? 'Hire me' : str_replace("\n", '', trim($matches[2][$string]));
-
-			// available No text
-			$string = array_search('available no text', array_map('strtolower', $matches[1]));
-			$output['availablenotext'] = $string === false ? 'Not available' : str_replace("\n", '', trim($matches[2][$string]));
+			$output['headerButton'] = $string === false ? 'Contact' : str_replace("\n", '', trim($matches[2][$string]));
 
 			// name
 			$string = array_search('name', array_map('strtolower', $matches[1]));
